@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  padding: 0 10px;
+  min-height: 100vh;
+  align-items: center;
+  /*background: linear-gradient(180deg, #008362 50%, #ffffff 50%);*/
+  background: linear-gradient(200deg, #008362, #9198e5);
+  justify-content: center;
+  color: #fff;
+}
+
+.caixa {
+  height: 265px;
+  max-width: 410px;
+  background: #222;
+  border-radius: 22% 8%;
+  padding: 20px 25px 0;
+  transition: height 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.caixa.active {
+  height: 530px;
+}
+
+header h1 {
+  font-size: 21px;
+  display: flex;
+  font-weight: 500;
+  color: #fff;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+header p {
+  margin-top: 5px;
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.caixa .form {
+  margin: 20px 0 25px;
+}
+
+.form :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.1s ease;
+}
+
+.form input {
+  font-size: 18px;
+  padding: 0 17px;
+  border: 1px solid #999;
+  color: #fff;
+  background: #333;
+}
+
+.form input:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.form input::placeholder {
+  color: #999;
+}
+
+.form button {
+    --color: #00A97F;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+    margin-top: 10px;
+    filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+}
+
+.form button:hover {
+    color: rgb(10, 25, 30);
+    background: #00a97f;
+    color: white;
+    box-shadow: 0 0 1.1rem rgb(0, 151, 113);
+}
+
+.form button:active {
+    filter: brightness(.8);
+}
+
+.qr-code {
+  opacity: 0;
+  display: flex;
+  padding: 33px 0;
+  border-radius: 5px;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border: 1px solid #ccc;
+}
+
+.caixa.active .qr-code {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+
+.qr-code img {
+  width: 170px;
+}
+
+@media (max-width: 430px) {
+  .caixa {
+    height: 255px;
+    padding: 16px 20px;
+  }
+  .caixa.active {
+    height: 510px;
+  }
+  header p {
+    color: #696969;
+  }
+  .form :where(input, button) {
+    height: 52px;
+  }
+  .qr-code img {
+    width: 160px;
+  }
+}
